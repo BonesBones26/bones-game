@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="BONES — a playable arrow-launch game with a public, onchain launch plan on Robinhood Chain." />
+  <meta name="theme-color" content="#07101b" />
+  <title>BONES | Game & Public Launch Plan</title>
+  <link rel="preload" href="assets/bones-cover.webp" as="image" type="image/webp" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="BONES home"><span class="bone-mark">🦴</span><span>BONES</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#game">Game</a>
+      <a href="#launch">Economy</a>
+      <a href="#airdrop">Airdrop</a>
+      <a href="#treasury">Treasury</a>
+      <a href="#wallets">Transparency</a>
+    </nav>
+    <button id="connectWallet" class="wallet-button" type="button">Connect wallet</button>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <picture>
+        <source srcset="assets/bones-cover.webp" type="image/webp" />
+        <img class="hero-art" src="assets/bones-cover.jpg" alt="BONES fantasy arrow-launch game cover" />
+      </picture>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">ARROW-LAUNCH PUZZLE GAME • ROBINHOOD CHAIN</p>
+        <h1>Launch the pups.<br />Break the towers.<br />Burn $BONES.</h1>
+        <p class="hero-copy">A playable browser game connected to a transparent community economy. Creator-fee revenue is allocated between studio income, game development, player rewards, $BONES buyback-and-burn and public $WISHBONE treasury purchases.</p>
+        <div class="hero-actions">
+          <a class="primary" href="game.html">Play demo V1.5</a>
+          <a class="secondary" id="buyBonesHero" href="#launch">$BONES pre-launch</a>
+        </div>
+        <div class="contract-pill"><strong>$BONES contract:</strong><span data-contract="bones">TBA AFTER LAUNCH</span><button data-copy="bones" type="button">Copy</button></div>
+      </div>
+      <div class="hero-trust" aria-label="Key launch facts">
+        <article><span>Pons fixed supply</span><strong>1,000,000,000</strong><small>The creator is not minted 100%.</small></article>
+        <article><span>Creator initial-buy target</span><strong>Up to 5%</strong><small>Actual amount published after execution.</small></article>
+        <article><span>Founder target</span><strong>3% vested</strong><small>90-day cliff, then 12 monthly releases.</small></article>
+      </div>
+    </section>
+
+    <section class="stats-section" aria-label="Public dashboard">
+      <div class="status-row"><span class="live-dot"></span><strong id="projectStatus">PRE-LAUNCH</strong><span>Onchain values remain zero until real transactions exist.</span></div>
+      <div class="stats-grid">
+        <article><span>Actual creator purchase</span><strong id="creatorPurchase">TBA</strong><small>Target: no more than 50,000,000 BONES.</small></article>
+        <article><span>Creator fees claimed</span><strong id="creatorFeesClaimed">0</strong><small>Only amounts actually claimed.</small></article>
+        <article><span>WISHBONE treasury</span><strong id="wishboneTreasury">0</strong><small>Public treasury balance.</small></article>
+        <article><span>BONES distributed / burned</span><strong id="bonesActivity">0</strong><small>Published claim and burn transactions.</small></article>
+      </div>
+    </section>
+
+    <section id="game" class="section split game-section">
+      <div>
+        <p class="eyebrow">PLAYABLE DEMO</p>
+        <h2>Enchant the bow. Break the cages. Register early.</h2>
+        <p>Drag backwards from the enchanted bow, choose the angle and release. Every playable pup has a different mid-flight ability. Destroy the bone cages while preserving as many arrows as possible.</p>
+        <ul class="feature-list">
+          <li><strong>Longer range:</strong> towers are reachable without pixel-perfect aiming.</li>
+          <li><strong>Stronger impacts:</strong> supports break more easily and transfer momentum.</li>
+          <li><strong>Four playable dogs:</strong> boost, slam, blast and shadow dash.</li>
+          <li><strong>No token rewards yet:</strong> the demo uses local points only.</li>
+          <li><strong>6 levels & first-500 registry:</strong> players who clear the first 5 levels can register a wallet for a future BONES campaign.</li>
+        </ul>
+        <a class="primary inline" href="game.html">Open the upgraded demo</a>
+      </div>
+      <a class="game-card" href="game.html" aria-label="Open BONES demo">
+        <img src="assets/game-preview.webp" alt="BONES playable game preview" />
+        <div class="game-card-overlay"><span>PLAYABLE IN BROWSER</span><strong>4 characters • 6 levels</strong></div>
+      </a>
+    </section>
+
+    <section id="launch" class="section launch-section">
+      <div class="section-heading-row">
+        <div>
+          <p class="eyebrow">HOW THE PONS LAUNCH ACTUALLY WORKS</p>
+          <h2>The project does not receive the entire supply.</h2>
+        </div>
+        <span class="verified-label">Designed to match onchain reality</span>
+      </div>
+      <p class="section-intro">Pons creates a fixed one-billion-token supply and launches the token with its WETH pool in one transaction. The pool liquidity is locked. BONES can only control the tokens obtained through the creator’s initial purchase and later creator-fee claims.</p>
+
+      <div class="flow-grid">
+        <article><span class="flow-number">01</span><h3>1B BONES minted</h3><p>The fixed supply is created by the Pons launch contract and placed into the trading pool.</p></article>
+        <article><span class="flow-number">02</span><h3>Creator buys up to 5%</h3><p>The target is up to 50 million BONES. The exact result depends on the live quote, price impact and transaction execution.</p></article>
+        <article><span class="flow-number">03</span><h3>Actual balances published</h3><p>The launch transaction, token contract, pool and every project-controlled allocation transfer will be linked publicly.</p></article>
+      </div>
+
+      <div class="truth-banner">
+        <strong>No hidden “100% tokenomics”.</strong>
+        <p>The 5% plan below is a target for the creator’s initial purchase—not a claim that the project owns or distributes the full supply. If less than 5% is obtained, community and founder amounts are reduced proportionally and the final figures replace the targets on this page.</p>
+      </div>
+    </section>
+
+    <section id="allocation" class="section dark-panel allocation-section">
+      <p class="eyebrow">TARGET INITIAL PURCHASE</p>
+      <h2>Up to 5% of supply, divided transparently.</h2>
+      <p class="section-intro">This table applies only if the creator’s launch purchase reaches 50,000,000 BONES. It is not guaranteed, and it does not describe the remaining 95% of the supply. Final amounts will be replaced with verified onchain balances after launch.</p>
+
+      <div class="allocation-table" role="table" aria-label="Target creator initial purchase allocation">
+        <div class="allocation-row allocation-head" role="row"><span>Destination</span><span>% of total supply</span><span>Target BONES</span><span>Status</span></div>
+        <div class="allocation-row" role="row"><span><strong>Founder Vesting</strong><small>90-day cliff + 12 monthly releases</small></span><span>3.0%</span><span>30,000,000</span><span class="status-tba">TBA</span></div>
+        <div class="allocation-row" role="row"><span><strong>WISHBONE holder claim</strong><small>Snapshot, exclusions and per-wallet cap</small></span><span>1.0%</span><span>10,000,000</span><span class="status-tba">TBA</span></div>
+        <div class="allocation-row" role="row"><span><strong>SKI holder claim</strong><small>Base snapshot; claim on Robinhood Chain</small></span><span>0.5%</span><span>5,000,000</span><span class="status-tba">TBA</span></div>
+        <div class="allocation-row" role="row"><span><strong>Verified players</strong><small>Genesis players and future game rewards</small></span><span>0.5%</span><span>5,000,000</span><span class="status-tba">TBA</span></div>
+        <div class="allocation-row allocation-total" role="row"><span><strong>Total creator target</strong></span><span>5.0%</span><span>50,000,000</span><span>Not yet purchased</span></div>
+      </div>
+
+      <div class="vesting-card">
+        <div><span class="chain-tag">FOUNDER POLICY</span><h3>No immediate 3% founder unlock.</h3></div>
+        <div class="vesting-timeline"><i></i><div><strong>Launch</strong><small>Transfer to vesting contract</small></div><div><strong>90 days</strong><small>Cliff ends</small></div><div><strong>12 months</strong><small>Monthly releases</small></div></div>
+        <p>The vesting contract address and funding transaction will be published. Until the contract is deployed, this is a stated target—not an onchain guarantee.</p>
+      </div>
+    </section>
+
+    <section id="fees" class="section fee-section">
+      <p class="eyebrow">CREATOR-FEE POLICY</p>
+      <h2>Income, WISHBONE support and operations.</h2>
+      <p class="section-intro">Pons currently charges a 1% pool fee and assigns 70% of that fee to the creator for current launches. Creator rewards can accrue in BONES and WETH. The policy below applies to creator-fee value actually received after claims; it is not a tax added to BONES transfers.</p>
+
+      <div class="fee-cards three">
+        <article><strong>40%</strong><h3>Founder remuneration</h3><p>Public compensation for creating and operating the game and project.</p><span>Illustrative effect: about 0.28% of trading volume</span></article>
+        <article><strong>40%</strong><h3>Buy WISHBONE</h3><p>Market purchases using the official WISHBONE contract, sent to the public treasury.</p><span>Illustrative effect: about 0.28% of trading volume</span></article>
+        <article><strong>20%</strong><h3>Game & operations</h3><p>Web, art, development, gas, marketing, security and maintenance.</p><span>Illustrative effect: about 0.14% of trading volume</span></article>
+      </div>
+    </section>
+
+    <section id="treasury" class="section dark-panel rules-section">
+      <p class="eyebrow">WISHBONE TREASURY RULES</p>
+      <h2>Purchases follow a published process.</h2>
+      <div class="rules-grid">
+        <article><span>01</span><h3>Settlement window</h3><p>At most once per week and only after a minimum public threshold is reached, so gas does not consume the purchase.</p></article>
+        <article><span>02</span><h3>Smaller executions</h3><p>Large amounts are divided into smaller transactions when liquidity or price impact requires it.</p></article>
+        <article><span>03</span><h3>Public treasury</h3><p>Purchased WISHBONE goes to the public treasury wallet and every transaction is added to the dashboard.</p></article>
+        <article><span>04</span><h3>No price promise</h3><p>Treasury purchases and burns do not guarantee an increase in BONES or WISHBONE value.</p></article>
+      </div>
+      <div class="policy-line"><strong>Treasury sale rule:</strong> WISHBONE will not be sold from the public treasury unless a new rule is published before any sale.</div>
+      <div class="treasury-wallets-block">
+        <h3>Treasury wallet map</h3>
+        <p class="treasury-wallets-intro">These public wallets support creator-fee settlements, WISHBONE purchases and the treasury flow.</p>
+        <div class="treasury-wallets-grid" id="treasuryWalletsGrid"></div>
+      </div>
+    </section>
+
+    <section id="airdrop" class="section">
+      <p class="eyebrow">CLAIM-BASED AIRDROPS</p>
+      <h2>Snapshots, exclusions and a cap per wallet.</h2>
+      <p class="section-intro">Airdrops are not sent automatically to every address. Eligibility and allocations are calculated from a published snapshot, then claimed through a Merkle distributor. This reduces gas waste and prevents pools, contracts and project wallets from receiving rewards.</p>
+      <div class="airdrop-grid visual-cards">
+        <article class="airdrop-card wishbone-card">
+          <div class="airdrop-image"><img src="assets/wishbone-holder-dog.png" alt="Green dog for WISHBONE holder campaign" /></div>
+          <span class="chain-tag">ROBINHOOD CHAIN</span>
+          <h3>WISHBONE Holders</h3>
+          <p>Target pool: up to 10,000,000 BONES if the full 5% initial purchase is achieved.</p>
+          <ul><li>Published snapshot block</li><li>Minimum eligible balance</li><li>LP, burn, bridge, contract and team exclusions</li><li>Maximum reward per wallet</li></ul>
+          <code data-contract="wishbone">0x7758…2d03</code>
+          <span class="pool-status">STATUS: TARGET — NOT FUNDED</span>
+        </article>
+
+        <article class="airdrop-card ski-card">
+          <div class="airdrop-image masked"><img src="assets/shadow-scout.png" alt="BONES shadow scout community character" /></div>
+          <span class="chain-tag">BASE → ROBINHOOD CHAIN</span>
+          <h3>SKI Holders</h3>
+          <p>Target pool: up to 5,000,000 BONES if the full 5% initial purchase is achieved.</p>
+          <ul><li>Snapshot balances on Base</li><li>Same EVM address claims BONES</li><li>No SKI bridge or transfer required</li><li>Proportional formula with a wallet cap</li></ul>
+          <code data-contract="skiBase">0x768B…0149</code>
+          <span class="pool-status">STATUS: TARGET — NOT FUNDED</span>
+        </article>
+
+        <article class="airdrop-card genesis-card">
+          <div class="airdrop-image game-airdrop"><img src="assets/hero-green-dog.png" alt="BONES green ranger dog" /></div>
+          <span class="chain-tag">GAME</span>
+          <h3>Verified Players</h3>
+          <p>Target pool: up to 5,000,000 BONES for early players and future verified campaigns, including a first-500 wallet registry for players who clear the first 5 demo levels.</p>
+          <ul><li>Complete the first 5 levels</li><li>Only the first 500 wallet registrations are kept</li><li>Anti-bot checks before any final list</li><li>No reward for merely connecting a wallet</li></ul>
+          <a href="game.html">Play the demo →</a>
+          <span class="pool-status">STATUS: DEMO REGISTRY OPEN</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="wallets" class="section wallet-section">
+      <div>
+        <p class="eyebrow">TRANSPARENCY</p>
+        <h2>Public creator-fee wallet.</h2>
+        <p>The public wallet shown below is the creator-fee wallet. It is the main reference address for disclosed creator-fee settlements and developer income linked to the BONES project.</p>
+        <div class="wallet-commitment"><strong>Project commitment:</strong> creator-fee settlements will be publicly explained and linked after launch. The aim is to keep the public footprint simple and understandable.</div>
+      </div>
+      <div class="wallet-table" id="walletTable"></div>
+    </section>
+
+    <section id="transparency" class="section dark-panel transparency-section">
+      <p class="eyebrow">PUBLIC DISCLOSURE</p>
+      <h2>What BONES promises—and what it does not.</h2>
+      <div class="disclosure-columns">
+        <article><h3>Onchain proof</h3><p>Official token, pool, launch transaction, actual initial purchase, vesting contract, snapshots, claims, fee settlements and WISHBONE purchases will be linked when they exist.</p></article>
+        <article><h3>Independent project</h3><p>BONES is not affiliated with, operated by or endorsed by Robinhood, Pons, WISHBONE or SKI. Those token communities are referenced only for independent eligibility campaigns.</p></article>
+        <article><h3>High risk</h3><p>BONES can be volatile, illiquid or lose all value. A purchase, burn, treasury balance, game demo or airdrop does not guarantee profit or price appreciation.</p></article>
+      </div>
+      <div class="risk-notice">Do not rely on target percentages as completed allocations. Until the relevant transactions are confirmed, every target remains TBA. Always verify the official BONES contract address before trading.</div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>BONES</strong><span>Aim true. Launch kind. Verify onchain.</span></div>
+    <div><a href="game.html">Demo</a><a href="setup.html">Setup tool</a><a href="#transparency">Risks</a></div>
+    <p>© 2026 BONES. Independent experimental project. No promise of profit or token value.</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

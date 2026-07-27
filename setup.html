@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BONES Local Setup</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="setup-wrap">
+    <a href="index.html">← Back to BONES</a>
+    <h1>BONES setup</h1>
+    <p>Use this page after the Pons launch to replace TBA values. Enter public addresses and public links only.</p>
+    <div class="setup-warning"><strong>Never paste:</strong> a seed phrase, private key, password, wallet backup or recovery file.</div>
+
+    <section class="setup-card">
+      <h2>Launch details</h2>
+      <label>$BONES contract</label><input id="bones" placeholder="TBA until Pons launch" />
+      <label>Pons token page</label><input id="ponsToken" placeholder="https://www.ponsfamily.com/launchpad/..." />
+      <label>Founder vesting contract</label><input id="founderVesting" placeholder="TBA until deployed and funded" />
+      <label>Future Merkle airdrop contract</label><input id="airdrop" placeholder="TBA until snapshot and funding" />
+    </section>
+
+    <section class="setup-card">
+      <h2>Disclosed wallets</h2>
+      <label>Wallet 1 — Deployer / Initial Buyer</label><input id="deployer" value="0xe57D9bEd1D83BA599bC374a59BAd8DD7f31763E0" />
+      <label>Wallet 2 — Creator Fees / Founder Beneficiary</label><input id="creatorRevenue" value="0xBe0e91aA47Dfb17b3dd9Ab5CC0fe4518676B8F08" />
+      <label>Wallet 3 — Community & WISHBONE Treasury</label><input id="communityTreasury" value="0x33640b51826CCcDCca5354bC980ABA80D6B61B0a" />
+      <p><small>After the vesting contract is deployed, its address appears as a fourth public entry even though it is a contract rather than another personal wallet.</small></p>
+    </section>
+
+    <section class="setup-card">
+      <h2>Public dashboard</h2>
+      <label>Actual creator purchase</label><input id="creatorPurchase" placeholder="Example: 47,250,000 BONES (4.725%)" />
+      <label>Creator fees claimed</label><input id="creatorFeesClaimed" placeholder="0" />
+      <label>WISHBONE treasury balance</label><input id="wishboneTreasury" placeholder="0" />
+      <label>BONES distributed / burned</label><input id="bonesActivity" placeholder="0" />
+    </section>
+
+    <section class="setup-card">
+      <button class="primary" type="button" onclick="generate()">Generate config.js</button>
+      <button class="secondary" type="button" onclick="downloadConfig()">Download config.js</button>
+      <textarea id="output" class="setup-output" spellcheck="false"></textarea>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script>
+    const val = (id, fallback) => document.getElementById(id).value.trim() || fallback;
+    function generate(){
+      const c = JSON.parse(JSON.stringify(window.BONES_CONFIG));
+      c.contracts.bones = val('bones','TBA_AFTER_LAUNCH');
+      c.contracts.airdrop = val('airdrop','TBA_AFTER_SNAPSHOT');
+      c.contracts.founderVesting = val('founderVesting','TBA_AFTER_LAUNCH');
+      c.links.ponsToken = val('ponsToken','#');
+      c.wallets.deployer = val('deployer','TBA');
+      c.wallets.creatorRevenue = val('creatorRevenue','TBA');
+      c.wallets.communityTreasury = val('communityTreasury','TBA');
+      c.wallets.founderVesting = c.contracts.founderVesting;
+      c.dashboard.creatorPurchase = val('creatorPurchase','TBA');
+      c.dashboard.creatorFeesClaimed = val('creatorFeesClaimed','0');
+      c.dashboard.wishboneTreasury = val('wishboneTreasury','0');
+      c.dashboard.bonesActivity = val('bonesActivity','0');
+      c.dashboard.status = c.contracts.bones.startsWith('TBA_') ? 'PRE-LAUNCH' : 'LIVE';
+      document.getElementById('output').value = 'window.BONES_CONFIG = ' + JSON.stringify(c,null,2) + ';\n';
+    }
+    function downloadConfig(){
+      if(!document.getElementById('output').value) generate();
+      const blob = new Blob([document.getElementById('output').value],{type:'text/javascript'});
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'config.js';
+      link.click();
+      URL.revokeObjectURL(link.href);
+    }
+    generate();
+  </script>
+</body>
+</html>

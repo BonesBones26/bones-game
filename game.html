@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Play BONES V1.8</title>
+  <link rel="stylesheet" href="game.css" />
+</head>
+<body>
+  <div class="game-shell">
+    <header>
+      <a href="index.html">← Project website</a>
+      <div><strong>BONES</strong><span>V1.8 high-power launch demo</span></div>
+      <button id="soundBtn" type="button" aria-pressed="false">Sound: off</button>
+    </header>
+    <div class="canvas-wrap">
+      <canvas id="game" width="1280" height="720" aria-label="BONES playable browser demo"></canvas>
+      <div id="startOverlay" class="overlay">
+        <div class="modal wide">
+          <span class="label">PLAYABLE ALPHA V1.8</span>
+          <h1>BONES</h1>
+          <p>Drag backwards from the enchanted bow, choose the angle and release. Every playable pup has a different mid-flight ability. Destroy the bone cages while preserving as many arrows as possible.</p>
+          <div class="character-showcase">
+            <article><img src="assets/verdant-archer.png" alt="Verdant Archer" /><strong>Verdant Archer</strong><small>Boost</small></article>
+            <article><img src="assets/forest-centurion-dog.png" alt="Forest Centurion" /><strong>Forest Centurion</strong><small>Slam</small></article>
+            <article><img src="assets/grove-scholar.png" alt="Grove Scholar" /><strong>Grove Scholar</strong><small>Blast</small></article>
+            <article><img src="assets/shadow-scout.png" alt="Shadow Scout" /><strong>Shadow Scout</strong><small>Dash</small></article>
+          </div>
+          <div class="controls"><span>🖱 Mouse</span><span>👆 Touch</span><span>⌨ Space = ability</span><span>⌨ R = restart</span></div>
+          <button id="startBtn">Start level 1</button>
+          <small>This demo awards local points only. Clear the first 5 levels to unlock the first-500 wallet registry prototype. Sound mode now includes extra effects and an original in-browser melody.</small>
+        </div>
+      </div>
+      <div id="resultOverlay" class="overlay hidden">
+        <div class="modal">
+          <span class="label" id="resultLabel">LEVEL COMPLETE</span>
+          <h2 id="resultTitle">Tower cleared!</h2>
+          <p id="resultText"></p>
+          <button id="nextBtn">Next level</button>
+          <button id="retryBtn" class="ghost">Retry level</button>
+        </div>
+      </div>
+    </div>
+    <div class="instructions">
+      <strong>How to play:</strong> drag the arrow backwards, release to launch, then click/tap during flight for the selected dog’s ability.
+      <span>Verdant Archer = boost • Forest Centurion = slam • Grove Scholar = blast • Shadow Scout = dash • first 500 wallets can register after clearing 5 levels</span>
+    </div>
+    <section class="registry-panel" aria-labelledby="registryTitle">
+      <div class="registry-card">
+        <span class="label">EARLY PLAYER REGISTRY</span>
+        <h2 id="registryTitle">First 500 wallets to clear 5 levels</h2>
+        <p>Once you complete the first 5 levels, you can register one EVM wallet for a future BONES player campaign. This prototype stores the list locally in the browser build, so the live launch will still require a final public claim process.</p>
+        <div class="registry-grid">
+          <div><strong id="levelsProgress">0 / 5 levels completed</strong><small>Need 5 cleared levels to unlock registration.</small></div>
+          <div><strong id="registryCount">0 / 500 wallets registered</strong><small>The demo keeps up to 500 local registrations.</small></div>
+        </div>
+        <form id="walletRegistryForm" class="wallet-registry-form">
+          <input id="walletInput" type="text" inputmode="text" autocomplete="off" placeholder="0x... your EVM wallet" />
+          <button id="walletRegisterBtn" type="submit" disabled>Unlock after 5 levels</button>
+        </form>
+        <p id="walletRegistryMessage" class="registry-message">Clear 5 levels to unlock the registry.</p>
+        <details class="registry-list">
+          <summary>Show locally registered wallets</summary>
+          <ol id="walletRegistryList"></ol>
+        </details>
+      </div>
+    </section>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
